@@ -25,7 +25,7 @@ if N>=10:
 print(count)
 '''
 
-coin_type = [500,100,50,10] ###
+coin_type = [500,100,50,10]
 for coin in coin_type:
     count+=int(N/coin)
     N = N%coin
