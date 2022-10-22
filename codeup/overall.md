@@ -11,3 +11,7 @@
     2. 출력할 " -> " \"!@#$%^&*()' "
     3. 출력할 \ -> " \"C:\Download\\'hello'.py\" "
     4. 출력할 \n -> r'print("Hello\nWorld")'
+- how to another number
+    1. 16, hex) print('%x'%int(a))
+    2. 16, hex, capital) print('%X'%int(a))
+    3. decimal to unicode) n = ord(input())
