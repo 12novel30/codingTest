@@ -7,11 +7,12 @@
 2 2 2 
 '''
 
-n, m = map(int, input().split())
-# answer ... 답 보지 말기
-maxi = 0
-for i in range(n):
+N, M = map(int, input().split())
+answer = 0
+
+for i in range(N):
     data = list(map(int, input().split()))
-    if min(data)>maxi:
-        maxi = min(data)
-print(maxi)
+    if answer < min(data):
+        answer = min(data)
+
+print(answer)

@@ -34,3 +34,18 @@ data.sort()
 first = data[n-1]
 second = data[n-2]
 '''
+
+# 22-11-04 이게 더 잘 푼 것 같다
+N, M, K = map(int, input().split())
+data = list(map(int, input().split()))
+
+data.sort(reverse=True)
+first = data[0]
+second = data[1]
+
+if M<K: print(first*N)
+else:
+    sa = M/(K+1)
+    namuge = M%(K+1)
+    answer = first*(3*sa + namuge) + second*sa
+    print(int(answer))
