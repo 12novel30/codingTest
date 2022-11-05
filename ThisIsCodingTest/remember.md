@@ -1,7 +1,9 @@
 # 다시 풀어볼 것
-3. 그리디 - 
-4. 구현 - re3
-6. 깊이탐색 - ex5-8, ex5-9, re3
+3. 그리디;
+4. 구현; re3
+5. 깊이탐색; ex5-8, ex5-9, re3, re4
+6. 정렬;
+
 ### 3,4 
 ```
 N, M, K = map(int, input().split())
@@ -38,4 +40,9 @@ DFS: ex5-8
 BFS: ex5-9
 
 tmp = list(map(int, input())) # integer input ex) 00000
+```
+
+### 6
+```
+
 ```
