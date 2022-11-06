@@ -36,16 +36,16 @@ second = data[n-2]
 '''
 
 # 22-11-04 이게 더 잘 푼 것 같다
-N, M, K = map(int, input().split())
+n, m, k = map(int, input().split())
 data = list(map(int, input().split()))
 
 data.sort(reverse=True)
 first = data[0]
 second = data[1]
 
-if M<K: print(first*N)
+if m < k: print(first*n)
 else:
-    sa = M/(K+1)
-    namuge = M%(K+1)
-    answer = first*(3*sa + namuge) + second*sa
-    print(int(answer))
+    qu = m//(k+1)
+    na = m%(k+1)
+    answer = (first*k + second)*qu + first*na
+    print(answer)
