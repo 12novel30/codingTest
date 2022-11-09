@@ -35,6 +35,22 @@ while n!=1:
         else:
             answer += n%k -1
             n -=n%k -1
-        
+
+while True:
     
+    target = (n//k)*k # target = k로 나누어떨어지는 수
+    answer += (n-target) # N이 target이 되기까지 -1을 (n-target)번 수행한 것
+    n = target
+    
+    # n이 k보다 작아서 -> 더이상 나눌 수 없음 -> 탈출
+    if n<k:
+        break
+    
+    # n이 k로 나누어떨어지는 수이면 2번째 연산 진행
+    n //= k
+    answer += 1
+
+# k로 나누어떨어지지 않고 & k보다 작을 때
+# 1번 연산만 진행
+answer += (n-1)
 print(answer)
