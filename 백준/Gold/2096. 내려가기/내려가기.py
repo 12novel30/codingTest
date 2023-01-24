@@ -2,23 +2,23 @@ import sys
 
 n = int(sys.stdin.readline())
 game = []
-maxMap = [[0,0,0],[0,0,0]]
-minMap = [[0,0,0],[0,0,0]]
+maxMap = [0,0,0]
+minMap = [0,0,0]
 
-j = 1
 for i in range(n):
-    j = 1-j
     a, b, c = map(int, sys.stdin.readline().split())
     if i == 0:
-        maxMap[j][0], maxMap[j][1], maxMap[j][2] = a, b, c
-        minMap[j][0], minMap[j][1], minMap[j][2] = a, b, c
+        maxMap[0], maxMap[1], maxMap[2] = a, b, c
+        minMap[0], minMap[1], minMap[2] = a, b, c
     else:
-        maxMap[j][0] = max(maxMap[1-j][0], maxMap[1-j][1]) + a
-        maxMap[j][1] = max(maxMap[1-j]) + b
-        maxMap[j][2] = max(maxMap[1-j][1], maxMap[1-j][2]) + c
+        tmpA = max(maxMap[0], maxMap[1]) + a
+        tmpB = max(maxMap) + b
+        tmpC = max(maxMap[1], maxMap[2]) + c
+        maxMap[0], maxMap[1], maxMap[2] = tmpA, tmpB, tmpC
         
-        minMap[j][0] = min(minMap[1-j][0], minMap[1-j][1]) + a
-        minMap[j][1] = min(minMap[1-j]) + b
-        minMap[j][2] = min(minMap[1-j][1], minMap[1-j][2]) + c
-
-print(str(max(maxMap[j])) + " " + str(min(minMap[j])))
+        tmpA = min(minMap[0], minMap[1]) + a
+        tmpB = min(minMap) + b
+        tmpC = min(minMap[1], minMap[2]) + c
+        minMap[0], minMap[1], minMap[2] = tmpA, tmpB, tmpC
+        
+print(str(max(maxMap)) + " " + str(min(minMap)))
