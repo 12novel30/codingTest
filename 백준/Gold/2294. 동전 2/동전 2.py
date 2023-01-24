@@ -9,19 +9,15 @@ for i in range(n):
     if tmp <= k:
         coin.append(tmp)
         dp[tmp] = 1
-if len(coin)==0:
-    print(-1)
-else:
-    for i in range(1, k+1):
-        if dp[i]==1:
-            continue
-        else:
-            for c in coin:
-                if i > c:
-                    if dp[i-c] != k+1:
-                        dp[i] = min(dp[i], 1+dp[i-c])
 
-    if dp[k] == k+1:
-        print(-1)
+for i in range(1, k+1):
+    if dp[i]==1:
+        continue
     else:
-        print(dp[k])
+        for c in coin:
+            if i > c:
+                if dp[i-c] != k+1:
+                    dp[i] = min(dp[i], 1+dp[i-c])
+
+if dp[k] != k+1: print(dp[k])
+else: print(-1)
