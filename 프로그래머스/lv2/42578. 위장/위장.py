@@ -7,7 +7,8 @@ def solution(clothes):
             type[cloth[1]] = 1
         else:
             type[cloth[1]] += 1
-    count = list(type.values())
-    for c in count:
+    
+    for c in type.values():
         answer *= c+1
+    
     return answer-1
