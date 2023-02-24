@@ -1,14 +1,12 @@
+# 코테 준비로 다시 풀었음
 def solution(clothes):
-    
-    type = {}
+    dict = {}
     for cloth in clothes:
-        answer = 1
-        if cloth[1] not in type:
-            type[cloth[1]] = 1
+        if cloth[1] not in dict:
+            dict[cloth[1]] = 1
         else:
-            type[cloth[1]] += 1
-    
-    for c in type.values():
-        answer *= c+1
-    
-    return answer-1
+            dict[cloth[1]] += 1
+    answer = 1
+    for v in dict.values():
+        answer *= v+1
+    return answer - 1
