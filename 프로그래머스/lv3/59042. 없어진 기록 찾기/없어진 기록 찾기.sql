@@ -9,21 +9,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 select o.ANIMAL_ID as ANIMAL_ID, o.NAME as NAME
-from animal_outs o left outer join animal_ins i 
-    on o.animal_id = i.animal_id
+from animal_outs o left outer join animal_ins i
+on o.ANIMAL_ID = i.ANIMAL_ID
 where i.datetime is null
+order by ANIMAL_ID
 
 
 
@@ -34,3 +24,14 @@ where i.datetime is null
 
 
 
+
+
+
+
+
+
+# select o.ANIMAL_ID as ANIMAL_ID, o.NAME as NAME
+# from animal_outs o left outer join animal_ins i 
+#     on o.animal_id = i.animal_id
+# where i.datetime is null
+# order by o.animal_id
